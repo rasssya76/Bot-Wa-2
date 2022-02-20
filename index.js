@@ -89,16 +89,16 @@ const tmp_hit = JSON.parse(fs.readFileSync('./src/hit.json'))
 const tmphit = JSON.parse(fs.readFileSync('./src/today.json'))
 //******************** 》Setting《 ********************\\
 menusimpel = false
-owner = "6281804680327@s.whatsapp.net"
-ownerN = "6281804680327"
+owner = "6281515589573@s.whatsapp.net"
+ownerN = "6281515589573"
 setgrup = "6281226770537-1606097314@g.us"
 wa = '0@s.whatsapp.net'
 blocked = []
 public = true
 picdetec = false
-shp = '⬡'
-nama = 'Senku BOT'
-fake = '@Rapaa021_'
+shp = '▷'
+nama = 'R-BOT'
+fake = '@RGans066_'
 antidel = false
 antical = false
 aread = false
@@ -151,9 +151,9 @@ let {
 //******************** 》Vcard《 ********************\\
 const vcard = 'BEGIN:VCARD\n'
             + 'VERSION:3.0\n'
-            + 'FN:Senku シ︎\n'
-            + 'ORG:Owner Senku;\n'
-            + 'TEL;type=CELL;type=VOICE;waid=6281804680327:+62 831-1800-241\n'
+            + 'FN:Rama シ︎\n'
+            + 'ORG:Owner Rama;\n'
+            + 'TEL;type=CELL;type=VOICE;waid=6281515589573:+62 815-1558-9573\n'
             + 'END:VCARD'
             
 const sleep = async (ms) => {
@@ -172,7 +172,16 @@ sen = sen.messages.all()[0]
 if (!sen.message) return
 if (sen.key && sen.key.remoteJid == 'status@broadcast') return
 sen.message = (Object.keys(sen.message)[0] === 'ephemeralMessage') ? sen.message.ephemeralMessage.message : sen.message
-
+//but
+const sendButMessage = (id, text1, desc1, but = [], options = {}) => {
+const buttonMessage = {
+contentText: text1,
+footerText: desc1,
+buttons: but,
+headerType: 1
+}
+senku.sendMessage(id, buttonMessage, MessageType.buttonsMessage, options)
+}
 m = smsg(senku, sen)
 global.prefix
 global.blocked
@@ -369,6 +378,31 @@ finvite = {
 }
 }
 }
+const fakyou = {           
+                    key: {
+                        fromMe: false,
+                        participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
+                    },
+                    message: {
+                        "imageMessage": {
+                            "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc",
+                            "mimetype": "image/jpeg",
+                            "caption": fake,
+                            "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=",
+                            "fileLength": "28777",
+                            "height": 1080,
+                            "width": 1079,
+                            "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=",
+                            "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=",
+                            "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69",
+                            "mediaKeyTimestamp": "1610993486",
+                            "jpegThumbnail": gambar3,
+                            "scansSidecar": "1W0XhfaAcDwc7xh1R8lca6Qg/1bB4naFCSngM2LKO2NoP5RI7K+zLw=="
+                        }
+                    }
+                }
+            })
+        }
 
 //******************** 》Advance《 ********************\\
 
@@ -391,7 +425,7 @@ senku.sendMessage(from, teks, text,{contextInfo :{text: 'hi',
 isForwarded: false,
 sendEphemeral: false,
 "externalAdReply": {
-                "title": `Whatsapp-BOT\nS e n. (@021senkuu_) •Instagram photos and Videos`,
+                "title": `Whatsapp-BOT\nS e n. (@08RamaGans) •Instagram photos and Videos`,
                 "body": "",
                 "previewType": "PHOTO",
                 "thumbnailUrl": "https://telegra.ph/file/bbb5eca08130920edbcb4.jpg",
@@ -559,7 +593,7 @@ teks = `Verification success\n\nPlease send *#menu* to view menu`
 reply(teks)
 }
 
-if (isCmd && !isRegister) return replyWithFakeLink(`*${waktoo} kak @${sender.split("@")[0]}*\n\nYou are not verified\nReply this chat and send bot password\n\nHint : \nPassword contains 4 digit number\nCek Password : https://instagram.com/021senkuu_`)
+if (isCmd && !isRegister) return replyWithFakeLink(`*${waktoo} kak @${sender.split("@")[0]}*\n\nYou are not verified\nReply this chat and send bot password\n\nHint : \nPassword contains 4 digit number\nCek Password : https://instagram.com/08RamaGans`)
 */
 // ******************** 》GAME《 ******************** \\
 
@@ -862,7 +896,7 @@ if (budy.toLowerCase() === 'vote'){
 let vote = JSON.parse(fs.readFileSync(`./database/pvote/${from}.json`))
 let _votes = JSON.parse(fs.readFileSync(`./database/vote/${from}.json`))  
 let fil = vote.map(v => v.participant)
-let id_vote = sender ? sender : '6281804680327@s.whatsapp.net'
+let id_vote = sender ? sender : '6281515589573@s.whatsapp.net'
 if(fil.includes(id_vote)) {
 return mentions('@'+sender.split('@')[0]+' Anda sudah vote', fil, true)
 } else {
@@ -884,7 +918,7 @@ mentions(_vote,_p,true)
 const vote = JSON.parse(fs.readFileSync(`./database/pvote/${from}.json`))
 let _votes = JSON.parse(fs.readFileSync(`./database/vote/${from}.json`))  
 let fil = vote.map(v => v.participant)
-let id_vote = sender ? sender : '6281804680327@s.whatsapp.net'
+let id_vote = sender ? sender : '6281515589573@s.whatsapp.net'
 if(fil.includes(id_vote)) {
 return mentions('@'+sender.split('@')[0]+' Anda sudah vote', fil, true)
 } else {
@@ -910,27 +944,27 @@ try{
 switch(tmplt){
 case '+62':
 reply(mess.wait)
-sendMediaURL(from,`https://dapuhy-api.herokuapp.com/api/asupan/asupan?apikey=ItsMeVean`)
+sendMediaURL(from,`https://dapuhy.xyz/api/asupan/asupan?apikey=RamaGans`)
 break
 case 'santuy':
 reply(mess.wait)
-sendMediaURL(from,`https://dapuhy-api.herokuapp.com/api/asupan/asupansantuy?apikey=ItsMeVean`)
+sendMediaURL(from,`https://dapuhy.xyz/api/asupan/asupansantuy?apikey=RamaGans`)
 break
 case 'bocil':
 reply(mess.wait)
-sendMediaURL(from,`https://dapuhy-api.herokuapp.com/api/asupan/asupanbocil?apikey=ItsMeVean`)
+sendMediaURL(from,`https://dapuhy.xyz/api/asupan/asupanbocil?apikey=RamaGans`)
 break
 case 'ukhti':
 reply(mess.wait)
-sendMediaURL(from,`https://dapuhy-api.herokuapp.com/api/asupan/asupanukhty?apikey=ItsMeVean`)
+sendMediaURL(from,`https://dapuhy.xyz/api/asupan/asupanukhty?apikey=RamaGans`)
 break
 case 'rikagusriani':
 reply(mess.wait)
-sendMediaURL(from,`https://dapuhy-api.herokuapp.com/api/asupan/asupanrikagusriani?apikey=ItsMeVean`)
+sendMediaURL(from,`https://dapuhy.xyz/api/asupan/asupanrikagusriani?apikey=RamaGans`)
 break
 case 'ghea':
 reply(mess.wait)
-sendMediaURL(from,`https://dapuhy-api.herokuapp.com/api/asupan/asupanghea?apikey=ItsMeVean`)
+sendMediaURL(from,`https://dapuhy.xyz/api/asupan/asupanghea?apikey=RamaGans`)
 break
 
 case 'MP3':
@@ -1094,7 +1128,7 @@ stopjadibot(reply)
 break
     
 case 'listbot':
-let tekss = 'L I S T B O T  S E N K U\n\n'
+let tekss = 'L I S T B O T\n\n'
 let lbt = [];
 for(let i of listjadibot) {
 lbt.push(i.jid)
@@ -1253,12 +1287,15 @@ blan = `${getBalance(sender, balance)}`
 usrr = `${sender.split("@")[0]}`
 runn = process.uptime()
 njing = `${kyun(runn)}`
-senku.sendMessage(from, help(prefix,pushname,usrr,waktoo,tag,wa,UFree,THit,wib,Tanggal,njing,premm,premi,limm,glimm,blan), text,{contextInfo :{text: 'hi',
+gbutsan = [
+{buttonId:`.owner`,buttonText:{displayText:'OWNER'},type:1},
+]
+sendButMessage(from, help(prefix,pushname,usrr,waktoo,tag,wa,UFree,THit,wib,Tanggal,njing,premm,premi,limm,glimm,blan), "R-COMMERCE", gbutsan, {quoted:fakyou, contextInfo: { forwardingScore: 508, isForwarded: true}})
 "forwardingScore": 1000000000,
 isForwarded: false,
 sendEphemeral: false,
 "externalAdReply": {
-                "title": `Hallo ${pushname}\nS e n. (@021senkuu_) •Instagram Story's`,
+                "title": `Hallo ${pushname}\nS e n. (@08RamaGans) •Instagram Story's`,
                 "body": "",
                 "previewType": "PHOTO",
                 "thumbnailUrl": "https://telegra.ph/file/bbb5eca08130920edbcb4.jpg",
@@ -2111,7 +2148,7 @@ await senku.sendMessage(from, gbuttonan, MessageType.buttonsMessage, {quoted:sen
 break
 */
 
-case 'playmp3': {
+case 'playmp3': case 'play': {
 if (!isGroup)return reply(mess.only.group)
 if (args.length < 1) return reply(`Kirim perintah *${prefix}play query*`)
 try {
@@ -2575,7 +2612,7 @@ senku.sendMessage(from, {displayname: "jeff", vcard: vcard}, MessageType.contact
 isForwarded: true,
 sendEphemeral: false,
 "externalAdReply": {
-                "title": `S e n. (@021senkuu_) •Instagram Story's`,
+                "title": `S e n. (@08RamaGans) •Instagram Story's`,
                 "body": "",
                 "previewType": "PHOTO",
                 "thumbnailUrl": "https://telegra.ph/file/bbb5eca08130920edbcb4.jpg",
@@ -3708,6 +3745,6 @@ return //console.log(color('[WARN]','red'), 'Unregistered Command from', color(s
 }
 }
 } catch (e) {
-console.log('Error : %s', color(e, 'red'))
+//console.log('Error : %s', color(e, 'red'))
 }
 }

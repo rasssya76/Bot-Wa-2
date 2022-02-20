@@ -28,9 +28,9 @@ const ms = require("parse-ms");
 const { getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, banner, start, info, success } = require('./lib/functions')
 const { color } = require('./lib/color')
 fakenomor = '0@s.whatsapp.net'
-const gcrevoke = ["6281804680327-1621430788@g.us"]
-shp = '⬡'
-owner = "6281804680327@s.whatsapp.net"
+const gcrevoke = ["6281515589573-1621430788@g.us"]
+shp = '▷'
+owner = "6281515589573@s.whatsapp.net"
 spc1 = '         '
 spc2 = '\n                           '
 spc3 = '                   '
@@ -48,7 +48,7 @@ const wita = moment.tz('Asia/Makassar').format('HH:mm:ss')
 const wit = moment.tz('Asia/Jayapura').format('HH:mm:ss')
 
 const starts = async (senku = new WAConnection()) => {
-senku.version = [2, 2119, 6]
+senku.version = [2, 2140, 12]
 //enku.browserDescription = [ '[•] Senku', 'Chrome', '3.0' ]
 senku.logger.level = 'warn'
 console.log(color(figlet.textSync(`${spc1}Senku Bot Wa`, {
@@ -167,7 +167,7 @@ fkontakk = { key: {
     participant: `0@s.whatsapp.net`, ...(anu.jid ? { remoteJid: '6283136505591-1604595598@g.us' } : {})
 },
  message: {
-    "contactMessage":{"displayName":'</ 𝘚𝘦𝘯𝘬𝘶𝘶⁴̅⁰͍⁴̵〆⁩',"vcard":"BEGIN:VCARD\nVERSION:3.0\nN:2;Fajar;;;\nFN:resku\nitem1.TEL;waid=6281804680327:+62 812-2354-6913\nitem1.X-ABLabel:Mobile\nEND:VCARD"
+    "contactMessage":{"displayName":'</ 𝘚𝘦𝘯𝘬𝘶𝘶⁴̅⁰͍⁴̵〆⁩',"vcard":"BEGIN:VCARD\nVERSION:3.0\nN:2;Fajar;;;\nFN:resku\nitem1.TEL;waid=6281515589573:+62 815-1558-9573\nitem1.X-ABLabel:Mobile\nEND:VCARD"
  }}}
 metdata = await senku.groupMetadata(anu.jid)
 if(anu.announce == 'false'){
